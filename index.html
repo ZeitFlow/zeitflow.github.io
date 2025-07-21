@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeitFlow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #a8d5a8 0%, #d4b896 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #4a4a4a;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .company-name {
+            font-size: 4rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #2d5016, #8b4513, #228b22);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 2px;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #5a5a5a;
+            font-style: italic;
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #2d5016;
+            font-weight: bold;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 200px;
+        }
+
+        .contact-label {
+            font-weight: bold;
+            color: #8b4513;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-value {
+            color: #4a4a4a;
+            font-size: 1rem;
+        }
+
+        .contact-value a {
+            color: #2d5016;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: #8b4513;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .company-name {
+                font-size: 2.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-item {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div>
+            <h1 class="company-name">ZeitFlow</h1>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-label">Email</div>
+                <div class="contact-value">
+                    <a href="mailto:hi@zeitflow.de">hi@zeitflow.de</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-label">Address</div>
+                <div class="contact-value">
+                  Kolonnenstraße 8<br>
+                  10827 Berlin<br>
+                  Germany
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
