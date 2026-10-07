@@ -11,7 +11,9 @@ Cloudflare Pages project: `zeitflow-website`.
 Production preview: https://zeitflow-website.pages.dev/.
 Dashboard: https://dash.cloudflare.com/64962783605a1e749a4ea11b02405af0/pages/view/zeitflow-website.
 
-The project uses the Pages Direct Upload API through GitHub Actions. `.github/workflows/static.yml` deploys pushes to `main` and can also be run manually from Actions. Activation requires the repository secret described below. The previous GitHub Pages deployment workflow is replaced.
+The project uses the Pages Direct Upload API through GitHub Actions. `.github/workflows/static.yml` deploys pushes to `main` and can also be run manually from Actions. The repository secret is configured. The previous GitHub Pages deployment workflow is replaced.
+
+First verified push deployment: [Actions run 37607231701](https://github.com/ZeitFlow/zeitflow.github.io/actions/runs/37607231701), commit `62d8815`, production branch `main`, completed successfully on 2026-10-07. Deployment: https://b62867e8.zeitflow-website.pages.dev/. Homepage and both legal pages returned HTTPS 200 afterward.
 
 Deploy in the personal account owning zeitflow.de (account ID `64962783605a1e749a4ea11b02405af0`, zone ID `6f2b6722489ed4d2591d95bbcb3d80bd`). Local Wrangler was authenticated to a separate ZeitFlow UG account during migration; check the account before any CLI deployment.
 

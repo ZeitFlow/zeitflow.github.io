@@ -1,6 +1,6 @@
 # Deploy main pushes through GitHub Actions
 
-Status: Accepted; credential activation and first production run pending.
+Status: Accepted and implemented.
 Date: 2026-10-07.
 
 ## Context
@@ -23,6 +23,8 @@ Source and deployment configuration are versioned in one repository. Changes on 
 
 ## Implementation and verification
 
-Workflow: .github/workflows/static.yml. Build script: scripts/build.py. Production-branch resolver: scripts/pages-production-branch.py. Actions are pinned to verified upstream commit SHAs; Wrangler is pinned to 4.148.0. GitHub permissions are contents:read and deployments:write. The local build produced exactly four files identical to source; actionlint v1.7.12 passed. Activation requires the token secret and a successful push-triggered production run.
+Workflow: .github/workflows/static.yml. Build script: scripts/build.py. Production-branch resolver: scripts/pages-production-branch.py. Actions are pinned to verified upstream commit SHAs; Wrangler is pinned to 4.148.0. GitHub permissions are contents:read and deployments:write. The local build produced exactly four files identical to source; actionlint v1.7.12 passed.
+
+The owner confirmed token creation and storage in GitHub Secrets. The account-owned token has only Pages Write permission in the website account. The temporary transfer file was deleted after saving the secret. The first push-triggered run [37607231701](https://github.com/ZeitFlow/zeitflow.github.io/actions/runs/37607231701), commit `62d8815`, completed successfully and deployed production branch main to https://b62867e8.zeitflow-website.pages.dev/. Homepage and legal pages returned HTTPS 200 after deployment.
 
 Related: README.md; adr-20261007-cloudflare-pages.md; AFFiNE Project — ZeitFlow website and ZeitFlow website — Hosting and HTTPS runbook. Shared ADR title: ZeitFlow website — ADR-20261007-github-deploy — Deploy main pushes through GitHub Actions.
