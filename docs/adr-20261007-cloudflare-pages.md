@@ -18,10 +18,14 @@ Use Pages project `zeitflow-website` in the account owning the apex zone. Attach
 
 ## Consequences
 
-The website no longer depends on GitHub origin TLS. GitHub commits do not automatically deploy to Pages; upload the complete static bundle. Cloudflare's global hosting is reflected in the privacy notice. Mail and other subdomains remain independent.
+The website no longer depends on GitHub origin TLS. At migration time, GitHub commits did not automatically deploy; the complete static bundle was uploaded manually. Cloudflare's global hosting is reflected in the privacy notice. Mail and other subdomains remain independent.
 
 ## Verification
 
 Original HTML matched byte-for-byte at pages.dev before switching DNS. Both custom domains became Active with SSL enabled and returned HTTPS 200 with certificate validation. DNS now uses proxied CNAMEs to zeitflow-website.pages.dev. Legal-page additions use the same deployment process.
 
 Related: README.md; AFFiNE Project — ZeitFlow website; ZeitFlow website — Hosting and HTTPS runbook. Shared ADR title: ZeitFlow website — ADR-20261007-cloudflare-pages — Host the static website on Cloudflare Pages.
+
+## Follow-up: push deployment
+
+The owner subsequently requested automatic deployment on GitHub pushes. The Pages hosting decision remains accepted; the manual-only deployment procedure is superseded by `adr-20261007-github-deploy.md`. The same Direct Upload project and custom domains are retained.
